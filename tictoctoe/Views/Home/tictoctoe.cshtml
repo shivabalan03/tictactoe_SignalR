@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "tictoctoe";
+}
+
+<br />
+
+    <div class="col-lg-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Game Play</div>
+            <div class="panel-body">
+                <form class="form">
+                    <div class="col-lg-6">
+                        <label>User Name</label>
+                        <input type="text" class="form-control" placeholder="User Name" id="txtUserID" />
+                    </div>
+                    <input type="hidden" id="userID" />
+                    <br />
+                    <div class="col-gl-6">
+                        <button type="button" class="btn btn-success" id="btnUserName">Create User</button>
+                        <button type="button" class="btn btn-danger">Reset</button>
+                    </div>
+                </form>
+                <br />
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <table class="table table-bordered" border="1px solid black">
+                            <tbody>
+                                <tr>
+                                    <td class="division" id="a1"></td>
+                                    <td class="division" id="a2"></td>
+                                    <td class="division" id="a3"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="division" id="b1"></td>
+                                    <td class="division" id="b2"></td>
+                                    <td class="division" id="b3"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="division" id="c1"></td>
+                                    <td class="division" id="c2"></td>
+                                    <td class="division" id="c3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Game Information</div>
+            <div class="panel-body">
+                <ul id="information"></ul>
+            </div>
+        </div>
+        <label id="turn" style="visibility:hidden"></label>
+    </div>
+
+
+
+<style>
+    td {
+        width:35px;
+        height:35px;
+    }
+</style>
+
+@section scripts{
+<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+<script src="~/Scripts/tictoctoe.js"></script>
+}
